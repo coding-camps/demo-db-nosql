@@ -1,0 +1,14 @@
+version: '3'
+services:
+  db-redis:
+    container_name: redis-local
+    image: redis
+    restart: always
+    ports:
+      - 6379:6379
+    # environment:
+      # MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      # MYSQL_ROOT_HOST: ${MYSQL_ROOT_HOST}
+    volumes:
+      - ${REDIS_DIR}/data:/data
+      # - ${REDIS_DIR}/redis.conf:/etc/redis.conf
